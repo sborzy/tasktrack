@@ -225,7 +225,8 @@ def review():
 
     # output format
     return render_template("review.html", reviewTask=reviewTask, today=currentTime.strftime("%m/%d/%Y"), weekAgo = beginWeek.strftime("%m/%d/%Y"), \
-        totalTime=round(totalTime,2), averageRate=round(averageRate,2))
+        totalTime=totalTime, averageRate=averageRate)
+        # totalTime=round(totalTime,2), averageRate=round(averageRate,2))
         # Note: If no tasks for a week, make sure review route and round method still work
 
 
