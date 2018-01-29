@@ -224,8 +224,12 @@ def review():
         userID = session["user_id"], statusNum=0, date1=date1, date2=date2)[0]["averageRate"]
 
     # output format
-    return render_template("review.html", reviewTask=reviewTask, today=currentTime.strftime("%m/%d/%Y"), weekAgo = beginWeek.strftime("%m/%d/%Y"), \
-        totalTime=totalTime, averageRate=averageRate)
+    if TotalTime or averageRate is NULL:
+        return render_template("review.html", reviewTask=reviewTask, today=currentTime.strftime("%m/%d/%Y"), weekAgo = beginWeek.strftime("%m/%d/%Y"), \
+            totalTime=totalTime, averageRate=averageRate)
+    else:
+        return render_template("review.html", reviewTask=reviewTask, today=currentTime.strftime("%m/%d/%Y"), weekAgo = beginWeek.strftime("%m/%d/%Y"), \
+            totalTime=round(totalTime,2), averageRate=round(averageRate,2))
         # totalTime=round(totalTime,2), averageRate=round(averageRate,2))
         # Note: If no tasks for a week, make sure review route and round method still work
 
