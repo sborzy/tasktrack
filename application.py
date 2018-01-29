@@ -224,7 +224,7 @@ def review():
         userID = session["user_id"], statusNum=0, date1=date1, date2=date2)[0]["averageRate"]
 
     # output format
-    if TotalTime or averageRate is NULL:
+    if totalTime or averageRate is NULL:
         return render_template("review.html", reviewTask=reviewTask, today=currentTime.strftime("%m/%d/%Y"), weekAgo = beginWeek.strftime("%m/%d/%Y"), \
             totalTime=totalTime, averageRate=averageRate)
     else:
