@@ -261,7 +261,7 @@ def login():
 
         # ensure username exists and password is correct
         if len(rows) != 1 or not pwd_context.verify(request.form.get("password"), rows[0]["hash"]):
-            flash('Invalid username and/or password')
+            flash('Invalid username and/or password BLAH')
             return render_template("login.html")
 
         # remember which user has logged in
